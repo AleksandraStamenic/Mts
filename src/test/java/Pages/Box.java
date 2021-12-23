@@ -4,19 +4,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 
-public class MtsMeni extends BasePage{
-
+public class Box extends BasePage {
     @FindBy (xpath = "(//*[@class='second-level-nav-btn js-nav-dropdown-btn'])[3]")
-    private WebElement boxMenuItem;
+    private WebElement box4;
 
-    public MtsMeni(ChromeDriver driver) {
+    public Box (ChromeDriver driver) {
         super(driver);
     }
+    public Box4 clickOnBox4MenuItem(){
+        clickOnBox4MenuItem();
+        return new Box4(driver);
 
-    public Box clickOnBoxMenuItem() {
-        boxMenuItem.click();
-        return new Box(driver);
     }
+
 
 
 
