@@ -9,7 +9,7 @@ public  abstract class BaseTest {
 
     public HomePage clickMtsMeni(ChromeDriver driver){
         BasePage page= new BasePage(driver);
-        pageMtsMeni.click();
+        clickMtsMeni(driver);
         return new HomePage(driver);
 
 
