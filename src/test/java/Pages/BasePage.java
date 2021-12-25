@@ -33,5 +33,9 @@ public class BasePage {
     public BasePage(ChromeDriver driver) {
         
     }
+
+
+    protected void click() {
+            }
 }
 

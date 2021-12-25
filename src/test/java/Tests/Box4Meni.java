@@ -1,16 +1,26 @@
 package Tests;
 
+import Pages.Box;
 import Pages.HomePage;
 import Pages.MtsMeni;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Box4Meni {
+public class Box4Meni extends BaseTest{
     @Test
-    public void testBox4Meni(){
+    public void testBoxMeni(){
         ChromeDriver driver=new ChromeDriver();
-        HomePage homePage=new HomePage(driver);
-        MtsMeni box=homePage.clickonboxMenuItem();
+        HomePage mtsMeni=new HomePage(driver);
+        clickonmtsMeni(driver);
+
+
+
+
+
+
+
+
+
 
 
 

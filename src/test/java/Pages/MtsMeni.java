@@ -1,5 +1,6 @@
 package Pages;
 
+import Tests.Box4Meni;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
@@ -13,10 +14,16 @@ public class MtsMeni extends BasePage{
         super(driver);
     }
 
-    public Box clickOnBoxMenuItem() {
-        boxMenuItem.click();
+    public Box clickOnBoxButton(){
+        clickOnBoxButton();
         return new Box(driver);
     }
+
+    public Box clickOnBoxMeniItem() {
+        clickOnBoxMeniItem().click();
+        return new Box(driver);
+    }
+
 
 
 

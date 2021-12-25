@@ -11,9 +11,7 @@ public class Box extends BasePage {
     public Box (ChromeDriver driver) {
         super(driver);
     }
-    public Box4 clickOnBox4MenuItem(){
-        clickOnBox4MenuItem();
-        return new Box4(driver);
+
 
     }
 
@@ -21,4 +19,8 @@ public class Box extends BasePage {
 
 
 
-}
+
+
+
+
+

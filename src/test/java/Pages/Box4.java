@@ -11,4 +11,10 @@ public class Box4 extends BasePage{
     public Box4(ChromeDriver driver) {
         super(driver);
     }
+
+    public FixnaNet clickOnFixnaNet(){
+        WebElement fixnaNet = driver.findElementByXPath( "(//*[@class='third-level-nav-link']) [3] ");
+        return new FixnaNet(driver);
+
+    }
 }
