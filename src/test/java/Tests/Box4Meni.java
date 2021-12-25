@@ -1,22 +1,20 @@
 package Tests;
 
-import Pages.BasePage;
 import Pages.HomePage;
-import com.fasterxml.jackson.databind.ser.Serializers;
+import Pages.MtsMeni;
 import org.junit.Test;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class OpenMts {
+public class Box4Meni {
     @Test
-    public void testOpenMts(){
+    public void testBox4Meni(){
         ChromeDriver driver=new ChromeDriver();
         HomePage homePage=new HomePage(driver);
-        driver.quit();
+        MtsMeni box=homePage.clickonboxMenuItem();
+
+
 
 
 
     }
-
-
-    }
-
+}

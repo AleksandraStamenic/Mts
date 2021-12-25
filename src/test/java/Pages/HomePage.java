@@ -13,6 +13,9 @@ public class HomePage extends BasePage {
     @FindBy (xpath = "(//*[@class='second-level-nav-btn js-nav-dropdown-btn'])[3]")
     private WebElement box4;
 
+    @FindBy (className = "hamburger-box")
+    public WebElement mtsMeni;
+
 
 
     public HomePage(ChromeDriver driver) {
