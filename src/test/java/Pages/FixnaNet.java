@@ -6,10 +6,9 @@ public class FixnaNet extends BasePage {
     public FixnaNet(ChromeDriver driver){
         super(driver);
     }
-    public FixnaNet clickonFixnaNet(){
-        fixnaNet.click();
-        return new FixnaNet(driver);
+ //   public  clickonFixnaNet(){
+   //     fixnaNet.click();
+     //   return new FixnaNet(driver);
     }
 
 
-}
