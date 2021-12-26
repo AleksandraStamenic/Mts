@@ -14,5 +14,6 @@ public class Box4Meni extends BaseTest {
         mtsMeni.clickonBoxMeniItem();
         mtsMeni.clickonBox4MeniItem();
         mtsMeni.clickonFixnaNet();
+        driver.quit();
     }
 }
