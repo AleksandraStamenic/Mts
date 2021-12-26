@@ -13,5 +13,6 @@ public class Box4Meni extends BaseTest {
         mtsMeni.clickonMeniItem();
         mtsMeni.clickonBoxMeniItem();
         mtsMeni.clickonBox4MeniItem();
+        mtsMeni.clickonFixnaNet();
     }
 }
