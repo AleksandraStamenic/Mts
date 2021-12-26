@@ -1,5 +1,6 @@
 package Pages;
 
+import Tests.Telefoni;
 import com.fasterxml.jackson.databind.ser.Serializers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -42,10 +43,16 @@ public class HomePage extends BasePage {
     public void clickonBox4MeniItem() {
         driver.findElementByXPath("(//*[@class=\"second-level-nav-btn js-nav-dropdown-btn\"])[3]").click();
     }
-    public FixnaNet clickonFixnaNet(){
+
+    public FixnaNet clickonFixnaNet() {
         driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[3]/div/ul/li[2]/ul/li[1]/a").click();
         return new FixnaNet(driver);
 
     }
 
+    public void clickonSearchButton() {
+        driver.findElementByXPath("//*[@id=\"main-header\"]/div[1]/ul/li[1]/span").click();
+    }
+
 }
+

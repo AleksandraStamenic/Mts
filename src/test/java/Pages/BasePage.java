@@ -35,6 +35,6 @@ public class BasePage {
     }
 
 
-  //  protected void click() {
+
 
 
