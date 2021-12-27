@@ -57,19 +57,10 @@ public class HomePage extends BasePage {
 
 
          public void clickonSearchButton() {
-        // try/catch blok sluzi da pokusa da izvrsi neki deo koda, i da uhvati gresku ukoliko se desi,
-        // kako ceo program ne bi pukao ukoliko dodje do greske (ovde je potrebno koristiti try/catch zbog Thread.sleep poziva
         try {
-        // posto je mts meni exapndable, u prvom trenutku kada se klikne mts meni dugme, search ikonica nije na pravoj pozociji pa moramo
-        // da sacekamo da se meni otvori do kraja
-        // htela sam da napisem custom funkciju za to ali da ne komplikujemo kod previse i da vas ne zbunjujem, samo cu pozvati java built-in metodu
-        // da kazem testu da saceka 2 sekunde pre nego sto nastavi izvrsavanje (to je dovoljno vremena da se otvori meni ali napomena
-        // da ovo nije dobra praksa ali je ovde primenjeno zbog jednostavnosti)
-        Thread.sleep(2000); // ovo je built-in metoda koja "kaze programu da saceka x sekundi pre nego sto izvrsi sledecu liniju koda
-        String searchIconXpath = "//*[@id=\"main-header\"]/div[1]/ul/li[1]/span"; // izdvojila sam xpath u promenljivu da ga ne bi kopirala vise puta u kodu
-        // ovo ispod (WebDriverWait) nije potrebno posto eksplicitno cekamo 2 sekunde, ali samo kao primer da moze i ovako da se ceka
-        // recimo kad se stranica ucitava ili se nesto drugo desava, pa element nije odma clickable, moze da se pozove webdriverwait (u ovom slucaju ce cekati do 15 sec da element bude clickable
-        // znaci ako je odma clickable, nece cekati, ali ce do 15 sekundi pokusavati da ceka, i da proba da klikne element
+
+        Thread.sleep(2000);
+        String searchIconXpath = "//*[@id=\"main-header\"]/div[1]/ul/li[1]/span";
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
         } catch (InterruptedException e) {
@@ -77,14 +68,10 @@ public class HomePage extends BasePage {
         }
         }
 
-/**
- * Ova metoda prima String text koji upisuje u search polje i zatim poziva search (simulira da je pritisnut enter)
- * @param searchText, String, text koji ce se upisati u search polje
- */
+
 public void searchByText(String searchText) {
         String inputXpath = "//*[@id=\"main-header\"]/div[1]/ul/li[1]/input";
-        driver.findElementByXPath(inputXpath).sendKeys(searchText); // prvo unosimo text u input polje
-        driver.findElementByXPath(inputXpath).sendKeys(Keys.ENTER); // saljemo 'enter' dugme u polje da bi se pokrenula pretgraga
+        driver.findElementByXPath(inputXpath).sendKeys(searchText);
+        driver.findElementByXPath(inputXpath).sendKeys(Keys.ENTER);
 
-        // mozete da dodate return ili ako zelite nesto dalje da radite sa pretragom
         }}
