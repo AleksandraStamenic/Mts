@@ -12,6 +12,7 @@ public class Telefoni extends BaseTest{
         HomePage mtsMeni=new HomePage(driver);
         mtsMeni.clickonMeniItem();
         mtsMeni.clickonSearchButton();
+        mtsMeni.searchByText("Iphone");
     }
 
 }
