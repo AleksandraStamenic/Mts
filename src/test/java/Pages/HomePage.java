@@ -40,7 +40,17 @@ public class HomePage extends BasePage {
     }
 
     public void clickonBoxMeniItem() {
-        driver.findElementByXPath("(//*[@class=\"main-nav-tab js-nav-first-level-btn\"])[3]").click();
+        try {
+
+            Thread.sleep(2000);
+            String searchIconXpath ="//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[3]/button";
+//        driver.findElementByXPath("(//*[@class=\"main-nav-tab js-nav-first-level-btn\"])[3]").click();
+            WebDriverWait wait = new WebDriverWait(driver, 15);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
     public void clickonBox4MeniItem() {
