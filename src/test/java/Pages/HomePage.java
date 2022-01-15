@@ -35,6 +35,37 @@ public class HomePage extends BasePage {
 
     }
 
+    public UserIcon clickonUserIcon(){
+        driver.findElementByXPath("//*[@id=\"main-header\"]/div[1]/div[2]/a[3]").click();
+        return new UserIcon(driver);
+    }
+    public Televizori clickonTelevizoriButton(){
+        driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/div/ul/li[2]/ul/li[2]/a").click();
+        return new Televizori(driver);
+
+    }
+
+    public void clickonPonudaUredjajaButton()
+    {
+        driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/div/ul/li[2]/button").click();
+    }
+
+    public void clickonUredjajiButton() {
+        try {
+
+        Thread.sleep(2000);
+        String searchIconXpath ="//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/button";
+//        driver.findElementByXPath("(//*[@class=\"main-nav-tab js-nav-first-level-btn\"])[3]").click();
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
+    }
+    catch (InterruptedException e) {
+        e.printStackTrace();
+    }
+       // driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/button").click();
+    }
+
+
     public void clickonMeniItem() {
         driver.findElementByXPath("//*[@id=\"main-header\"]/div[1]/div[2]/button").click();
     }

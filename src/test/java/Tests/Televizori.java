@@ -2,18 +2,18 @@ package Tests;
 
 import Pages.HomePage;
 import org.junit.Test;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class Telefoni extends BaseTest{
+public class Televizori extends BaseTest{
+
     @Test
-    public void testTelefoni(){
+    public void testTelevizori() {
         ChromeDriver driver=new ChromeDriver();
         HomePage mtsMeni=new HomePage(driver);
         mtsMeni.clickonMeniItem();
-        mtsMeni.clickonSearchButton();
-        mtsMeni.searchByText("Iphone");
-        driver.quit();
-    }
+        mtsMeni.clickonUredjajiButton();
+        mtsMeni.clickonPonudaUredjajaButton();
+        mtsMeni.clickonTelevizoriButton();
 
+    }
 }
