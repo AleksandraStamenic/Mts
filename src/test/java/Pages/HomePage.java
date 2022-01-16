@@ -1,17 +1,10 @@
 package Pages;
 
-import Tests.Telefoni;
-import com.fasterxml.jackson.databind.ser.Serializers;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import java.util.ArrayList;
-import java.util.List;
 
 import static org.junit.Assert.assertNotNull;
 
@@ -36,6 +29,14 @@ public class HomePage extends BasePage {
         driver.get(homePageUrl);
         this.driver = driver;
 
+    }
+
+    public void clickonFilterButton(){
+        driver.findElementByXPath("//*[@id=\"page-wrap\"]/section[2]/section[1]/div/div/div[2]").click();
+    }
+    public Telefoni clickonTelefoniButton(){
+        driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/div/ul/li[2]/ul/li[1]/a").click();
+        return new Telefoni(driver);
     }
 
     public UserIcon clickonUserIcon(){
@@ -120,4 +121,18 @@ public void searchByText(String searchText) {
 
         }
 
+    public Telefoni clickonAppleButton() {
+        try {
+
+            Thread.sleep(2000);
+            String searchIconXpath = "//*[@id=\"filtersForm\"]/div/ul[2]/li[1]/div/label";
+            WebDriverWait wait = new WebDriverWait(driver, 10);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+    //    driver.findElementByXPath("//*[@id="filtersForm"]/div/ul[2]/li[1]/div/label").click();
+ //   }
 }
