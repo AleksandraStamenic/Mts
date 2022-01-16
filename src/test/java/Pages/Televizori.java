@@ -1,6 +1,15 @@
 package Pages;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
 
 public class Televizori  extends BasePage{
     ChromeDriver driver;
@@ -11,4 +20,33 @@ public class Televizori  extends BasePage{
         driver.get(TelevizoriUrl);
         this.driver=driver;
     }
+
+    public ArrayList<WebElement> getlistOfTv() {
+        ArrayList<WebElement> listOfTv = new ArrayList<>(driver.findElementsByXPath("//*[@id=\"deviceListTemplateContainer\"]/li"));
+        return listOfTv;
+    }
+    public ArrayList<String> getDeviceItem() {
+        ArrayList<WebElement> listOfTv = new ArrayList<>(driver.findElementsByXPath("//*[@id=\"deviceListTemplateContainer\"]/li"));
+        ArrayList<String> deviceItems = new ArrayList<>();
+        for (int i = 0; i < listOfTv.size();i++) {
+            String deviceItem = listOfTv.get(i).getText();
+            deviceItems.add(deviceItem);
+        }
+        return deviceItems;
+
+
+    }
+    public String getDeviceItemofTv(WebElement product){
+
+
+        return product.getText();
+
+
+
+    }
+
+
+
+
 }
+

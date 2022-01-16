@@ -11,6 +11,9 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import static org.junit.Assert.assertNotNull;
 
 public class HomePage extends BasePage {
     String homePageUrl = "https://mts.rs/";
@@ -115,4 +118,6 @@ public void searchByText(String searchText) {
         driver.findElementByXPath(inputXpath).sendKeys(searchText);
         driver.findElementByXPath(inputXpath).sendKeys(Keys.ENTER);
 
-        }}
+        }
+
+}
