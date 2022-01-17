@@ -45,8 +45,18 @@ public class Televizori  extends BasePage{
 
     }
 
-
-
-
-}
+    public Kupovina clickonKupiButton(){
+        try {
+            Thread.sleep(2000);
+            String searchIconXpath = "//*[@id=\"submit-product-cart\"]";
+            WebDriverWait wait = new WebDriverWait(driver, 15);
+            wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
+        }
+        catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        return new Kupovina(driver);
+    }
+      //  driver.findElementByXPath("//*[@id=\"submit-product-cart\"]");
+    }
 

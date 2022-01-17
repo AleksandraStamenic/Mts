@@ -32,6 +32,7 @@ public class LogIn extends BaseTest{
         if (actual_error.equals(expected_error)){
             System.out.println("TRUE");
         }
+         driver.quit();
 
 
      }}

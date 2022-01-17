@@ -12,17 +12,6 @@ public class HomePage extends BasePage {
     String homePageUrl = "https://mts.rs/";
     ChromeDriver driver;
 
-    // @FindBy (xpath = "(//*[@class='main-nav-tab js-nav-first-level-btn'])[3])")
-    //public WebElement boxMenuItem;
-
-    // @FindBy (xpath = "(//*[@class='second-level-nav-btn js-nav-dropdown-btn'])[3]")
-    //private WebElement box4;
-
-    // @FindBy (xpath = "//*[@id=\"main-header\"]/div[1]/div[2]/button/span")
-    //public WebElement mtsMeni;
-
-    //  @FindBy (className = "main-navigation-mobile-wrapper")
-    // public WebElement Proizvodi;
 
     public HomePage(ChromeDriver driver) {
         super(driver);
@@ -59,14 +48,13 @@ public class HomePage extends BasePage {
 
         Thread.sleep(2000);
         String searchIconXpath ="//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/button";
-//        driver.findElementByXPath("(//*[@class=\"main-nav-tab js-nav-first-level-btn\"])[3]").click();
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.elementToBeClickable(By.xpath(searchIconXpath))).click();
     }
     catch (InterruptedException e) {
         e.printStackTrace();
     }
-       // driver.findElementByXPath("//*[@id=\"main-header\"]/div[2]/div/ul/li[1]/nav/ul/li[2]/button").click();
+
     }
 
 
@@ -97,11 +85,7 @@ public class HomePage extends BasePage {
         return new FixnaNet(driver);
 
     }
-
-
-
-
-         public void clickonSearchButton() {
+    public void clickonSearchButton() {
         try {
 
         Thread.sleep(2000);
@@ -112,9 +96,7 @@ public class HomePage extends BasePage {
         e.printStackTrace();
         }
         }
-
-
-public void searchByText(String searchText) {
+        public void searchByText(String searchText) {
         String inputXpath = "//*[@id=\"main-header\"]/div[1]/ul/li[1]/input";
         driver.findElementByXPath(inputXpath).sendKeys(searchText);
         driver.findElementByXPath(inputXpath).sendKeys(Keys.ENTER);
@@ -132,7 +114,4 @@ public void searchByText(String searchText) {
             e.printStackTrace();
         }
         return null;
-    }
-    //    driver.findElementByXPath("//*[@id="filtersForm"]/div/ul[2]/li[1]/div/label").click();
- //   }
-}
+    }}
